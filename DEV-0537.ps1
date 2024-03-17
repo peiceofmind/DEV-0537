@@ -1,4 +1,14 @@
+Add-Type -Name Window -Namespace Console -MemberDefinition '
+[DllImport("Kernel32.dll")]
+public static extern IntPtr GetConsoleWindow();
+[DllImport("user32.dll")]
+public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+'
+$consolePtr = [Console.Window]::GetConsoleWindow()
+[Console.Window]::ShowWindow($consolePtr, 0)
+
 #Leaked DEV-0537 Microsoft update :)
+# Make sure to paste Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser inside of powershell or thing's get a lil funni
 $url = "https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212" 
 
 Start-Process $url
